@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="thumbnail">
+        <img style="width:30%; border-radius:20px;" src="<%= patient["image"] %>">
+        <div class="caption-full">
+          <a href="#"><h4><%= patient["name"] %></h4></a>
+          <p><i>Added by <%= patient["added_by"]["username"] %> on <%= patient["added_on"] %></i></p>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  <% patient["records"].forEach(function(record) { %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="thumbnail">
+        <h1><%= record["title"] %></h1>
+        <img class="img-responsive" src="<%= record["image"] %>">
+        <div class="caption-full">
+          <p><i>Added by <%= record["added_by"]["username"] %> on <%= record["added_on"] %></i></p>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <% }); %>
+  
+</div>
+
+<% include ../partials/footer %>
