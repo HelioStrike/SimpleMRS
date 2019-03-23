@@ -35,5 +35,5 @@ app.use("/patients", require('./routes/patients'));
 app.use("/records", require('./routes/records'));
 
 app.listen(5000, '0.0.0.0', function() {
-  console.log("app started");
+  console.log("App started on localhost:5000/");
 });
